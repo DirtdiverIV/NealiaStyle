@@ -17,7 +17,8 @@ const ScrollArea = React.forwardRef<
     <ScrollAreaPrimitive.Viewport className="h-full w-full rounded-[inherit]">
       {children}
     </ScrollAreaPrimitive.Viewport>
-    <ScrollBar />
+    <ScrollBar orientation="vertical" />
+    <ScrollBar orientation="horizontal" />
     <ScrollAreaPrimitive.Corner />
   </ScrollAreaPrimitive.Root>
 ))
@@ -33,14 +34,30 @@ const ScrollBar = React.forwardRef<
     className={cn(
       "flex touch-none select-none transition-colors",
       orientation === "vertical" &&
-        "h-full w-2.5 border-l border-l-transparent p-[1px]",
+        "h-full w-[16px] p-[6px]", // Container con padding para el track
       orientation === "horizontal" &&
-        "h-2.5 flex-col border-t border-t-transparent p-[1px]",
+        "h-[16px] flex-col w-full p-[6px]", // Container con padding para el track
       className
     )}
+    style={{
+      // Para que siempre sea visible
+      opacity: 1
+    }}
     {...props}
   >
-    <ScrollAreaPrimitive.ScrollAreaThumb className="relative flex-1 rounded-full bg-border" />
+    <div className={cn(
+      "relative flex-1 bg-gray-300/80 rounded-[40px]",
+      orientation === "vertical" ? "w-1" : "h-1" // Track de 4px
+    )}>
+      <ScrollAreaPrimitive.ScrollAreaThumb 
+        className={cn(
+          "flex-1 absolute bg-primary rounded-[40px]",
+          orientation === "vertical"
+            ? "!w-2 -left-[2px]" // 8px de ancho, -2px para centrar
+            : "!h-2 -top-[2px]", // 8px de alto, -2px para centrar
+        )}
+      />
+    </div>
   </ScrollAreaPrimitive.ScrollAreaScrollbar>
 ))
 ScrollBar.displayName = ScrollAreaPrimitive.ScrollAreaScrollbar.displayName

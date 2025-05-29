@@ -12,7 +12,7 @@ import { Switch } from "@/components/ui/switch"
 import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from "@/components/ui/table"
 import { Textarea } from "@/components/ui/textarea"
 import { Calendar } from "@/components/ui/calendar"
-import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from "@/components/ui/dropdown-menu"
+import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator } from "@/components/ui/dropdown-menu"
 import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet"
 import { Skeleton } from "@/components/ui/skeleton"
@@ -23,63 +23,75 @@ import { Separator } from "@/components/ui/separator"
 import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover"
 import { Command, CommandInput, CommandList, CommandItem } from "@/components/ui/command"
 import { Toaster } from "@/components/ui/sonner"
-import { Toast, ToastProvider, ToastViewport } from "@/components/ui/toast"
 import { useState } from "react"
 import { toast } from "sonner"
+import { Plus, ArrowRight, MoreVertical, Settings, User, LogOut, FileEdit } from 'lucide-react'
+import { DateRange } from "react-day-picker"
 
 function App() {
-  const [date, setDate] = useState<Date>()
+  const [range, setRange] = useState<DateRange | undefined>(undefined);
 
   return (
-    <ToastProvider>
-      <div className="p-8 max-w-7xl mx-auto">
+    <>
+      <div className="p-8 max-w-7xl mx-auto bg-background">
         <h1 className="text-4xl font-bold mb-8">Componentes NealiaStyle</h1>
 
         {/* Botones y Acciones */}
-        <section className="component-section">
-          <h2>Botones y Acciones</h2>
+        <section className="mb-12 p-6 rounded-lg bg-white shadow-sm border border-gray-100">
+          <h2 className="text-2xl font-semibold mb-6">Botones y Acciones</h2>
           <div className="space-y-8">
             <div>
               <div className="flex items-center gap-4 mb-4">
                 <h3 className="text-lg font-semibold">Button</h3>
-                <Separator orientation="vertical" className="h-4" />
+                <Separator orientation="vertical" className="h-4 bg-gray-200" />
                 <span className="text-sm text-muted-foreground">Componente Button con diferentes variantes</span>
               </div>
-              <div className="space-x-2">
-                <Button>Botón</Button>
-                <Button variant="destructive">Destructive</Button>
-                <Button variant="outline">Outline</Button>
-                <Button variant="secondary">Secondary</Button>
-                <Button variant="ghost">Ghost</Button>
-                <Button variant="link">Link</Button>
+              <div className="space-x-4 flex items-center gap-4 mb-4">
+                <Button>Botón Default</Button>
+                <Button icon={Plus}>Default con Icono</Button>
+                <Button variant="outlined">Botón Outlined</Button>
+                <Button variant="outlined" icon={ArrowRight}>Outlined con Icono</Button>
+                <Button variant="icon-only" icon={MoreVertical} aria-label="Más opciones" />
               </div>
             </div>
 
-            <Separator />
+            <Separator className="my-8 bg-gray-200" />
 
             <div>
               <div className="flex items-center gap-4 mb-4">
                 <h3 className="text-lg font-semibold">DropdownMenu</h3>
-                <Separator orientation="vertical" className="h-4" />
+                <Separator orientation="vertical" className="h-4 bg-gray-200" />
                 <span className="text-sm text-muted-foreground">Menú desplegable con opciones</span>
               </div>
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button>Menú Desplegable</Button>
+                  <Button variant="icon-only" icon={MoreVertical} />
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
-                  <DropdownMenuItem>Opción 1</DropdownMenuItem>
-                  <DropdownMenuItem>Opción 2</DropdownMenuItem>
+                  <DropdownMenuItem icon={FileEdit}>
+                    Editar
+                  </DropdownMenuItem>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem icon={User}>
+                    Perfil
+                  </DropdownMenuItem>
+                  <DropdownMenuItem icon={Settings}>
+                    Configuración
+                  </DropdownMenuItem>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem icon={LogOut} className="text-red-600">
+                    Cerrar Sesión
+                  </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
             </div>
 
-            <Separator />
+            <Separator className="my-8 bg-gray-200" />
 
             <div>
               <div className="flex items-center gap-4 mb-4">
                 <h3 className="text-lg font-semibold">Dialog</h3>
-                <Separator orientation="vertical" className="h-4" />
+                <Separator orientation="vertical" className="h-4 bg-gray-200" />
                 <span className="text-sm text-muted-foreground">Ventana de diálogo modal</span>
               </div>
               <Dialog>
@@ -100,35 +112,35 @@ function App() {
         </section>
 
         {/* Campos de Entrada */}
-        <section className="component-section">
-          <h2>Campos de Entrada</h2>
+        <section className="mb-12 p-6 rounded-lg bg-white shadow-sm border border-gray-100">
+          <h2 className="text-2xl font-semibold mb-6">Campos de Entrada</h2>
           <div className="space-y-8">
             <div>
               <div className="flex items-center gap-4 mb-4">
                 <h3 className="text-lg font-semibold">Input</h3>
-                <Separator orientation="vertical" className="h-4" />
+                <Separator orientation="vertical" className="h-4 bg-gray-200" />
                 <span className="text-sm text-muted-foreground">Campo de entrada de texto</span>
               </div>
               <Input placeholder="Input de ejemplo" />
             </div>
 
-            <Separator />
+            <Separator className="my-8 bg-gray-200" />
 
             <div>
               <div className="flex items-center gap-4 mb-4">
                 <h3 className="text-lg font-semibold">Textarea</h3>
-                <Separator orientation="vertical" className="h-4" />
+                <Separator orientation="vertical" className="h-4 bg-gray-200" />
                 <span className="text-sm text-muted-foreground">Campo de texto multilínea</span>
               </div>
               <Textarea placeholder="Textarea de ejemplo" />
             </div>
 
-            <Separator />
+            <Separator className="my-8 bg-gray-200" />
 
             <div>
               <div className="flex items-center gap-4 mb-4">
                 <h3 className="text-lg font-semibold">Checkbox</h3>
-                <Separator orientation="vertical" className="h-4" />
+                <Separator orientation="vertical" className="h-4 bg-gray-200" />
                 <span className="text-sm text-muted-foreground">Casilla de verificación</span>
               </div>
               <div className="flex items-center space-x-4">
@@ -137,12 +149,12 @@ function App() {
               </div>
             </div>
 
-            <Separator />
+            <Separator className="my-8 bg-gray-200" />
 
             <div>
               <div className="flex items-center gap-4 mb-4">
                 <h3 className="text-lg font-semibold">RadioGroup</h3>
-                <Separator orientation="vertical" className="h-4" />
+                <Separator orientation="vertical" className="h-4 bg-gray-200" />
                 <span className="text-sm text-muted-foreground">Grupo de opciones radio</span>
               </div>
               <RadioGroup defaultValue="option-1">
@@ -157,12 +169,12 @@ function App() {
               </RadioGroup>
             </div>
 
-            <Separator />
+            <Separator className="my-8 bg-gray-200" />
 
             <div>
               <div className="flex items-center gap-4 mb-4">
                 <h3 className="text-lg font-semibold">Select</h3>
-                <Separator orientation="vertical" className="h-4" />
+                <Separator orientation="vertical" className="h-4 bg-gray-200" />
                 <span className="text-sm text-muted-foreground">Menú de selección</span>
               </div>
               <Select>
@@ -176,12 +188,12 @@ function App() {
               </Select>
             </div>
 
-            <Separator />
+            <Separator className="my-8 bg-gray-200" />
 
             <div>
               <div className="flex items-center gap-4 mb-4">
                 <h3 className="text-lg font-semibold">Switch</h3>
-                <Separator orientation="vertical" className="h-4" />
+                <Separator orientation="vertical" className="h-4 bg-gray-200" />
                 <span className="text-sm text-muted-foreground">Interruptor de alternancia</span>
               </div>
               <div className="flex items-center space-x-2">
@@ -193,13 +205,13 @@ function App() {
         </section>
 
         {/* Navegación y Estructura */}
-        <section className="component-section">
-          <h2>Navegación y Estructura</h2>
+        <section className="mb-12 p-6 rounded-lg bg-white shadow-sm border border-gray-100">
+          <h2 className="text-2xl font-semibold mb-6">Navegación y Estructura</h2>
           <div className="space-y-8">
             <div>
               <div className="flex items-center gap-4 mb-4">
                 <h3 className="text-lg font-semibold">Tabs</h3>
-                <Separator orientation="vertical" className="h-4" />
+                <Separator orientation="vertical" className="h-4 bg-gray-200" />
                 <span className="text-sm text-muted-foreground">Pestañas de navegación</span>
               </div>
               <Tabs defaultValue="tab1" className="w-full">
@@ -212,12 +224,12 @@ function App() {
               </Tabs>
             </div>
 
-            <Separator />
+            <Separator className="my-8 bg-gray-200" />
 
             <div>
               <div className="flex items-center gap-4 mb-4">
                 <h3 className="text-lg font-semibold">Card</h3>
-                <Separator orientation="vertical" className="h-4" />
+                <Separator orientation="vertical" className="h-4 bg-gray-200" />
                 <span className="text-sm text-muted-foreground">Tarjeta con contenido estructurado</span>
               </div>
               <Card>
@@ -234,18 +246,18 @@ function App() {
               </Card>
             </div>
 
-            <Separator />
+            <Separator className="my-8 bg-gray-200" />
 
             <div>
               <div className="flex items-center gap-4 mb-4">
                 <h3 className="text-lg font-semibold">Sheet</h3>
-                <Separator orientation="vertical" className="h-4" />
+                <Separator orientation="vertical" className="h-4 bg-gray-200" />
                 <span className="text-sm text-muted-foreground">Paneles deslizables desde diferentes posiciones</span>
               </div>
               <div className="flex flex-wrap gap-4">
                 <Sheet>
                   <SheetTrigger asChild>
-                    <Button variant="outline">Sheet Derecha</Button>
+                    <Button variant="outlined">Sheet Derecha</Button>
                   </SheetTrigger>
                   <SheetContent>
                     <div className="space-y-4">
@@ -270,7 +282,7 @@ function App() {
 
                 <Sheet>
                   <SheetTrigger asChild>
-                    <Button variant="outline">Sheet Izquierda</Button>
+                    <Button variant="outlined">Sheet Izquierda</Button>
                   </SheetTrigger>
                   <SheetContent side="left">
                     <div className="space-y-4">
@@ -296,7 +308,7 @@ function App() {
 
                 <Sheet>
                   <SheetTrigger asChild>
-                    <Button variant="outline">Sheet Superior</Button>
+                    <Button variant="outlined">Sheet Superior</Button>
                   </SheetTrigger>
                   <SheetContent side="top" className="h-[50vh]">
                     <div className="space-y-4">
@@ -326,7 +338,7 @@ function App() {
 
                 <Sheet>
                   <SheetTrigger asChild>
-                    <Button variant="outline">Sheet Inferior</Button>
+                    <Button variant="outlined">Sheet Inferior</Button>
                   </SheetTrigger>
                   <SheetContent side="bottom" className="h-[40vh]">
                     <div className="space-y-4">
@@ -340,7 +352,7 @@ function App() {
                           </AlertDescription>
                         </Alert>
                         <div className="flex justify-end space-x-2">
-                          <Button variant="outline">Cancelar</Button>
+                          <Button variant="outlined">Cancelar</Button>
                           <Button>Aceptar</Button>
                         </div>
                       </div>
@@ -350,19 +362,19 @@ function App() {
               </div>
             </div>
 
-            <Separator />
+            <Separator className="my-8 bg-gray-200" />
 
             <div>
               <div className="flex items-center gap-4 mb-4">
                 <h3 className="text-lg font-semibold">Alert y Toast</h3>
-                <Separator orientation="vertical" className="h-4" />
+                <Separator orientation="vertical" className="h-4 bg-gray-200" />
                 <span className="text-sm text-muted-foreground">Ejemplos interactivos de alertas y notificaciones</span>
               </div>
               <div className="space-y-4">
                 <div className="flex space-x-4">
                   <Button 
                     onClick={() => {
-                      toast("¡Éxito!", {
+                      toast.success("¡Éxito!", {
                         description: "La operación se completó correctamente.",
                       })
                     }}
@@ -370,7 +382,7 @@ function App() {
                     Mostrar Toast de Éxito
                   </Button>
                   <Button 
-                    variant="destructive"
+                    variant="outlined"
                     onClick={() => {
                       toast.error("Error", {
                         description: "Algo salió mal. Por favor, inténtalo de nuevo.",
@@ -380,7 +392,17 @@ function App() {
                     Mostrar Toast de Error
                   </Button>
                   <Button 
-                    variant="outline"
+                    variant="outlined"
+                    onClick={() => {
+                      toast.warning("Advertencia", {
+                        description: "Hay cambios sin guardar.",
+                      })
+                    }}
+                  >
+                    Mostrar Toast de Advertencia
+                  </Button>
+                  <Button 
+                    variant="outlined"
                     onClick={() => {
                       toast.promise(
                         new Promise((resolve) => setTimeout(resolve, 2000)),
@@ -401,7 +423,7 @@ function App() {
                   <AlertDescription>
                     Este es un mensaje informativo con acciones.
                     <div className="mt-2">
-                      <Button variant="outline" size="sm">Saber más</Button>
+                      <Button variant="outlined" size="sm">Saber más</Button>
                     </div>
                   </AlertDescription>
                 </Alert>
@@ -411,21 +433,20 @@ function App() {
                   <AlertDescription>
                     Ha ocurrido un error que requiere tu atención.
                     <div className="mt-2 space-x-2">
-                      <Button variant="destructive" size="sm">Resolver</Button>
-                      <Button variant="outline" size="sm">Ignorar</Button>
+                      <Button variant="outlined">Resolver</Button>
+                      <Button variant="outlined">Ignorar</Button>
                     </div>
                   </AlertDescription>
                 </Alert>
-
-                <Alert variant="default" className="border-blue-500">
-                  <AlertTitle className="text-blue-500">Actualización Disponible</AlertTitle>
+                <Alert variant="success">
+                  <AlertTitle>Actualización Disponible</AlertTitle>
                   <AlertDescription>
                     Hay una nueva versión disponible del sistema.
                     <div className="mt-2 space-x-2">
-                      <Button variant="outline" size="sm" className="border-blue-500 text-blue-500 hover:bg-blue-50">
+                      <Button variant="outlined" size="sm">
                         Actualizar Ahora
                       </Button>
-                      <Button variant="ghost" size="sm">
+                      <Button variant="outlined" size="sm">
                         Recordar más tarde
                       </Button>
                     </div>
@@ -437,81 +458,174 @@ function App() {
         </section>
 
         {/* Datos y Visualización */}
-        <section className="component-section">
-          <h2>Datos y Visualización</h2>
+        <section className="mb-12 p-6 rounded-lg bg-white shadow-sm border border-gray-100">
+          <h2 className="text-2xl font-semibold mb-6">Datos y Visualización</h2>
           <div className="space-y-8">
             <div>
               <div className="flex items-center gap-4 mb-4">
                 <h3 className="text-lg font-semibold">Table</h3>
-                <Separator orientation="vertical" className="h-4" />
-                <span className="text-sm text-muted-foreground">Tabla de datos</span>
+                <Separator orientation="vertical" className="h-4 bg-gray-200" />
+                <span className="text-sm text-muted-foreground">Tabla de reglas de granja</span>
               </div>
               <Table>
                 <TableHeader>
                   <TableRow>
-                    <TableHead>Nombre</TableHead>
-                    <TableHead>Email</TableHead>
-                    <TableHead>Rol</TableHead>
+                    <TableHead>Descripción Regla</TableHead>
+                    <TableHead>Orden</TableHead>
+                    <TableHead>Desde</TableHead>
+                    <TableHead>Hasta</TableHead>
+                    <TableHead>Origen</TableHead>
+                    <TableHead>Regla activa</TableHead>
+                    <TableHead>Nota servicio</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
                   <TableRow>
-                    <TableCell>Juan Pérez</TableCell>
-                    <TableCell>juan@ejemplo.com</TableCell>
-                    <TableCell>Admin</TableCell>
+                    <TableCell>Anclar granja vaciando Hembras</TableCell>
+                    <TableCell className="text-center">1</TableCell>
+                    <TableCell className="text-center">01/07/2023</TableCell>
+                    <TableCell className="text-center">31/12/2024</TableCell>
+                    <TableCell className="text-center">
+                      <Select defaultValue="granja">
+                        <SelectTrigger>
+                          <SelectValue />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="granja">Granja</SelectItem>
+                          <SelectItem value="centro">Centro</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </TableCell>
+                    <TableCell className="text-center"><Checkbox defaultChecked /></TableCell>
+                    <TableCell className="text-center">1</TableCell>
                   </TableRow>
                   <TableRow>
-                    <TableCell>María García</TableCell>
-                    <TableCell>maria@ejemplo.com</TableCell>
-                    <TableCell>Usuario</TableCell>
+                    <TableCell>Trasladar machos a centro 1</TableCell>
+                    <TableCell className="text-center">2</TableCell>
+                    <TableCell className="text-center">01/08/2023</TableCell>
+                    <TableCell className="text-center">30/06/2024</TableCell>
+                    <TableCell className="text-center">
+                      <Select defaultValue="centro">
+                        <SelectTrigger>
+                          <SelectValue />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="granja">Granja</SelectItem>
+                          <SelectItem value="centro">Centro</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </TableCell>
+                    <TableCell className="text-center"><Checkbox /></TableCell>
+                    <TableCell className="text-center">2</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>Priorizar hembras jóvenes en destino</TableCell>
+                    <TableCell className="text-center">3</TableCell>
+                    <TableCell className="text-center">01/09/2023</TableCell>
+                    <TableCell className="text-center">31/12/2024</TableCell>
+                    <TableCell className="text-center">
+                      <Select defaultValue="granja">
+                        <SelectTrigger>
+                          <SelectValue />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="granja">Granja</SelectItem>
+                          <SelectItem value="centro">Centro</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </TableCell>
+                    <TableCell className="text-center"><Checkbox defaultChecked /></TableCell>
+                    <TableCell className="text-center">1</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>Reservar espacio para gestantes</TableCell>
+                    <TableCell className="text-center">4</TableCell>
+                    <TableCell className="text-center">01/10/2023</TableCell>
+                    <TableCell className="text-center">31/12/2025</TableCell>
+                    <TableCell className="text-center">
+                      <Select defaultValue="granja">
+                        <SelectTrigger>
+                          <SelectValue />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="granja">Granja</SelectItem>
+                          <SelectItem value="centro">Centro</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </TableCell>
+                    <TableCell className="text-center"><Checkbox /></TableCell>
+                    <TableCell className="text-center">3</TableCell>
                   </TableRow>
                 </TableBody>
               </Table>
             </div>
 
-            <Separator />
+            <Separator className="my-8 bg-gray-200" />
 
             <div>
               <div className="flex items-center gap-4 mb-4">
                 <h3 className="text-lg font-semibold">Avatar y Badge</h3>
-                <Separator orientation="vertical" className="h-4" />
+                <Separator orientation="vertical" className="h-4 bg-gray-200" />
                 <span className="text-sm text-muted-foreground">Avatar de usuario y etiquetas de estado</span>
               </div>
-              <div className="flex items-center space-x-4">
-                <Avatar>
-                  <AvatarImage src="https://github.com/shadcn.png" />
-                  <AvatarFallback>CN</AvatarFallback>
-                </Avatar>
-                <Badge>Nuevo</Badge>
-                <Badge variant="secondary">Pendiente</Badge>
-                <Badge variant="destructive">Error</Badge>
+              <div className="space-y-6">
+                {/* Tags Group */}
+                <div>
+                  <h4 className="text-sm font-medium mb-3">Tags</h4>
+                  <div className="flex items-center gap-4">
+                    <Badge variant="tag-rounded">Tag Redondeado</Badge>
+                    <Badge variant="tag-square">Tag Cuadrado</Badge>
+                    <Badge 
+                      variant="tag-rounded-closable" 
+                      onClose={() => toast.info("Tag cerrado")}
+                    >
+                      Tag Redondeado Cerrable
+                    </Badge>
+                    <Badge 
+                      variant="tag-square-closable"
+                      onClose={() => toast.info("Tag cerrado")}
+                    >
+                      Tag Cuadrado Cerrable
+                    </Badge>
+                  </div>
+                </div>
+
+                {/* Status Group */}
+                <div>
+                  <h4 className="text-sm font-medium mb-3">Estados</h4>
+                  <div className="flex items-center gap-4">
+                    <Badge variant="status-completed">Finalizada</Badge>
+                    <Badge variant="status-in-progress">En curso</Badge>
+                    <Badge variant="status-pending">Pendiente</Badge>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <Separator />
+            <Separator className="my-8 bg-gray-200" />
 
             <div>
               <div className="flex items-center gap-4 mb-4">
                 <h3 className="text-lg font-semibold">Calendar</h3>
-                <Separator orientation="vertical" className="h-4" />
+                <Separator orientation="vertical" className="h-4 bg-gray-200" />
                 <span className="text-sm text-muted-foreground">Selector de fecha</span>
               </div>
               <div className="inline-block border rounded-lg p-4">
                 <Calendar
-                  mode="single"
-                  selected={date}
-                  onSelect={setDate}
+                  mode="range"
+                  selected={range}
+                  onSelect={setRange}
                   className="rounded-md"
                 />
               </div>
             </div>
 
-            <Separator />
+            <Separator className="my-8 bg-gray-200" />
 
             <div>
               <div className="flex items-center gap-4 mb-4">
                 <h3 className="text-lg font-semibold">Slider</h3>
-                <Separator orientation="vertical" className="h-4" />
+                <Separator orientation="vertical" className="h-4 bg-gray-200" />
                 <span className="text-sm text-muted-foreground">Control deslizante</span>
               </div>
               <Slider defaultValue={[50]} max={100} step={1} />
@@ -520,13 +634,13 @@ function App() {
         </section>
 
         {/* Feedback y Estado */}
-        <section className="component-section">
-          <h2>Feedback y Estado</h2>
+        <section className="mb-12 p-6 rounded-lg bg-white shadow-sm border border-gray-100">
+          <h2 className="text-2xl font-semibold mb-6">Feedback y Estado</h2>
           <div className="space-y-8">
             <div>
               <div className="flex items-center gap-4 mb-4">
                 <h3 className="text-lg font-semibold">Skeleton</h3>
-                <Separator orientation="vertical" className="h-4" />
+                <Separator orientation="vertical" className="h-4 bg-gray-200" />
                 <span className="text-sm text-muted-foreground">Indicador de carga</span>
               </div>
               <div className="flex items-center space-x-4">
@@ -538,60 +652,101 @@ function App() {
               </div>
             </div>
 
-            <Separator />
+            <Separator className="my-8 bg-gray-200" />
 
             <div>
               <div className="flex items-center gap-4 mb-4">
                 <h3 className="text-lg font-semibold">Pagination</h3>
-                <Separator orientation="vertical" className="h-4" />
+                <Separator orientation="vertical" className="h-4 bg-gray-200" />
                 <span className="text-sm text-muted-foreground">Control de paginación</span>
               </div>
               <div className="flex items-center justify-center">
-                <Pagination>
-                  <Button variant="outline" size="sm">
-                    Anterior
-                  </Button>
-                  <Button variant="outline" size="sm">
-                    1
-                  </Button>
-                  <Button variant="outline" size="sm">
-                    2
-                  </Button>
-                  <Button variant="outline" size="sm">
-                    3
-                  </Button>
-                  <Button variant="outline" size="sm">
-                    Siguiente
-                  </Button>
-                </Pagination>
+                <Pagination
+                  currentPage={1}
+                  totalPages={5}
+                  onPageChange={(page) => {
+                    toast.info(`Navegando a la página ${page}`)
+                  }}
+                />
               </div>
             </div>
 
-            <Separator />
+            <Separator className="my-8 bg-gray-200" />
 
             <div>
               <div className="flex items-center gap-4 mb-4">
                 <h3 className="text-lg font-semibold">ScrollArea</h3>
-                <Separator orientation="vertical" className="h-4" />
-                <span className="text-sm text-muted-foreground">Área con desplazamiento</span>
+                <Separator orientation="vertical" className="h-4 bg-gray-200" />
+                <span className="text-sm text-muted-foreground">Área con desplazamiento vertical y horizontal</span>
               </div>
-              <ScrollArea className="h-[200px] w-[350px] rounded-md border p-4">
-                <div className="space-y-4">
-                  <p>Contenido scrolleable</p>
-                  {Array.from({ length: 50 }).map((_, i) => (
-                    <div key={i} className="text-sm">
-                      Item {i + 1}
-                    </div>
-                  ))}
+              <div className="space-y-4">
+                <div className="flex gap-8">
+                  {/* Scroll Vertical */}
+                  <div>
+                    <h4 className="text-sm font-medium mb-2">Scroll Vertical</h4>
+                    <ScrollArea className="h-[200px] w-[350px] rounded-md border p-4">
+                      <div className="space-y-4">
+                        <p>Contenido scrolleable vertical</p>
+                        {Array.from({ length: 50 }).map((_, i) => (
+                          <div key={i} className="text-sm">
+                            Item {i + 1}
+                          </div>
+                        ))}
+                      </div>
+                    </ScrollArea>
+                  </div>
+
+                  {/* Scroll Horizontal */}
+                  <div>
+                    <h4 className="text-sm font-medium mb-2">Scroll Horizontal</h4>
+                    <ScrollArea className="h-[200px] w-[350px] rounded-md border p-4">
+                      <div className="flex gap-4">
+                        {Array.from({ length: 50 }).map((_, i) => (
+                          <div
+                            key={i}
+                            className="shrink-0 rounded-md border border-gray-200 bg-white p-4"
+                          >
+                            <div className="space-y-2">
+                              <div className="h-20 w-40 rounded-md bg-gray-100" />
+                              <div className="h-4 w-20 rounded-md bg-gray-100" />
+                              <div className="h-4 w-16 rounded-md bg-gray-100" />
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </ScrollArea>
+                  </div>
                 </div>
-              </ScrollArea>
+
+                {/* Scroll en ambas direcciones */}
+                <div>
+                  <h4 className="text-sm font-medium mb-2">Scroll en Ambas Direcciones</h4>
+                  <ScrollArea className="h-[400px] w-[350px] rounded-md border p-4">
+                    <div className="w-[800px]">
+                      <div className="grid grid-cols-3 gap-4">
+                        {Array.from({ length: 30 }).map((_, i) => (
+                          <div
+                            key={i}
+                            className="rounded-md border border-gray-200 bg-white p-4"
+                          >
+                            <div className="space-y-2">
+                              <div className="h-20 w-full rounded-md bg-gray-100" />
+                              <div className="h-4 w-[80%] rounded-md bg-gray-100" />
+                              <div className="h-4 w-[60%] rounded-md bg-gray-100" />
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </ScrollArea>
+                </div>
+              </div>
             </div>
           </div>
         </section>
       </div>
       <Toaster />
-      <ToastViewport />
-    </ToastProvider>
+    </>
   )
 }
 
