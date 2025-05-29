@@ -4,16 +4,104 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --primary: 24 95% 53%;
-    --primary-hover: 18 85% 43%;
-    --primary-pressed: 15 75% 33%;
-    --secondary: 32 100% 92%;
-    --tertiary: 17 80% 38%;
-
-    /* Estado */
-    --error: 0 84% 60%;      /* red-500 */
-    --success: 142 76% 36%;  /* green-500 */
-    --warning: 45 93% 47%;   /* yellow-500 */
+    --background: #FFFFFF;
+    --primary: #FF972B;
+    --primary-hover: #B56B1F;
+    --primary-pressed: #6B3F12;
+    --secondary: #FFF5EA;
+    --tertiary: #8C5318;
+    --error: #E40000;
+    --success: #AEEABA;
+    --warning: #FFF5EA;
   }
+
+  html.theme-health {
+    --background: #FFFFFF;
+    --primary: #FF972B;
+    --primary-hover: #B56B1F;
+    --primary-pressed: #6B3F12;
+    --secondary: #FFF5EA;
+    --tertiary: #8C5318;
+    --error: #E40000;
+    --success: #AEEABA;
+    --warning: #FFF5EA;
+  }
+
+  html.theme-vision {
+    --background: #FFFFFF;
+    --primary: #00CFFF;
+    --primary-hover: #00728C;
+    --primary-pressed: #212529;
+    --secondary: #E6FAFF;
+    --tertiary: #00576B;
+    --error: #E40000;
+    --success: #AEEABA;
+    --warning: #E6FAFF;
+  }
+
+  html.theme-log {
+    --background: #FFFFFF;
+    --primary: #4CCEB7;
+    --primary-hover: #369282;
+    --primary-pressed: #20574D;
+    --secondary: #EDFAF8;
+    --tertiary: #20574D;
+    --error: #E40000;
+    --success: #AEEABA;
+    --warning: #EDFAF8;
+  }
+}
+
+body {
+  font-family: 'Mulish', sans-serif;
+} 
+
+/* Estilos para el scrollbar global */
+::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+
+::-webkit-scrollbar-track {
+  padding: 6px;
+}
+
+::-webkit-scrollbar-track:hover {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 40px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+  min-height: 40px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-hover);
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: var(--primary-pressed);
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) transparent;
+}
+
+*:hover {
+  scrollbar-color: var(--primary-hover) transparent;
+}
+
+*:active {
+  scrollbar-color: var(--primary-pressed) transparent;
 } 
