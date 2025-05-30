@@ -50,11 +50,15 @@
     --success: #43CE5E;
     --warning: #FFDC14;
   }
-}
 
-body {
-  font-family: 'Mulish', sans-serif;
-} 
+  /* Definición unificada de fuentes */
+  html, body {
+    font-family: 'Mulish', Tahoma, Verdana, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+}
 
 /* Estilos para el scrollbar global */
 ::-webkit-scrollbar {
