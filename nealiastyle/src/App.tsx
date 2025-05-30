@@ -1,7 +1,5 @@
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card"
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert"
 import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
@@ -14,14 +12,11 @@ import { Textarea } from "@/components/ui/textarea"
 import { Calendar } from "@/components/ui/calendar"
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator } from "@/components/ui/dropdown-menu"
 import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
-import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet"
 import { Skeleton } from "@/components/ui/skeleton"
 import { Slider } from "@/components/ui/slider"
 import { Pagination } from "@/components/ui/pagination"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Separator } from "@/components/ui/separator"
-import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover"
-import { Command, CommandInput, CommandList, CommandItem } from "@/components/ui/command"
 import { Toaster } from "@/components/ui/sonner"
 import { Navbar } from "@/components/ui/navbar"
 import { useState, useEffect } from "react"
@@ -537,6 +532,16 @@ function App() {
                   </div>
                   <div className="space-y-4">
                     <Alert>
+                      <AlertTitle>¡Información Importante!</AlertTitle>
+                      <AlertDescription>
+                        Este es un mensaje informativo con acciones.
+                        <div className="mt-2">
+                          <Button variant="outlined" size="sm">Saber más</Button>
+                        </div>
+                      </AlertDescription>
+                    </Alert>
+
+                    <Alert variant="warning">
                       <AlertTitle>¡Información Importante!</AlertTitle>
                       <AlertDescription>
                         Este es un mensaje informativo con acciones.
