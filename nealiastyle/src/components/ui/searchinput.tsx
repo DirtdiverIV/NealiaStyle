@@ -38,16 +38,10 @@ const SearchInput = React.forwardRef<HTMLInputElement, SearchInputProps>(
 
     return (
       <div className="relative w-full">
-        <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5" style={{ color: '#0A0A0A' }} />
+        <Search className="absolute left-4 top-1/2 -translate-y-1/2 size-5" style={{ color: '#0A0A0A' }} />
         <input
           className={cn(
-            "flex h-11 w-full rounded-[24px] border border-gray-300 bg-white pl-12 py-2",
-            "text-base shadow-sm transition-colors",
-            "placeholder:text-gray-400",
-            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:border-primary",
-            "disabled:cursor-not-allowed disabled:opacity-50",
-            "md:text-sm",
-            // Ajustar padding derecho si hay texto para el botón
+            "flex h-11 w-full rounded-[24px] border border-gray-300 bg-white pl-12 py-2 text-base shadow-sm transition-colors placeholder:text-gray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:border-primary disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
             searchValue ? "pr-12" : "pr-4",
             className
           )}
@@ -64,10 +58,13 @@ const SearchInput = React.forwardRef<HTMLInputElement, SearchInputProps>(
         {searchValue && (
           <button
             onClick={handleSearch}
-            className="absolute right-3 top-1/2 transform -translate-y-1/2 p-1 rounded-full hover:bg-gray-100 transition-colors"
+            className={cn(
+              "absolute right-3 top-1/2 -translate-y-1/2 p-1 rounded-full hover:bg-gray-100 transition-colors",
+              className
+            )}
             type="button"
           >
-            <ArrowRight className="w-5 h-5" style={{ color: '#0A0A0A' }} />
+            <ArrowRight className="size-5" style={{ color: '#0A0A0A' }} />
           </button>
         )}
       </div>

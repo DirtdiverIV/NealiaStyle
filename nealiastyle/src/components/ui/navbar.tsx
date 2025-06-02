@@ -16,8 +16,8 @@ const logos = {
 
 export function Navbar({ theme, onThemeChange }: NavbarProps) {
   return (
-    <nav className="h-[72px] bg-primary px-6 py-2 flex items-center justify-between fixed top-0 left-0 right-0 z-50 shadow-md">
-      <div className="h-full flex items-center">
+    <nav className="fixed top-0 left-0 right-0 z-50 flex h-[72px] items-center justify-between bg-primary px-6 py-2 shadow-md">
+      <div className="flex h-full items-center">
         <img 
           src={logos[theme as keyof typeof logos]} 
           alt={`${theme} logo`}

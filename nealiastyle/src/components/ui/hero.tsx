@@ -12,8 +12,7 @@ const Hero = React.forwardRef<HTMLDivElement, HeroProps>(
     <div
       ref={ref}
       className={cn(
-        "relative min-h-screen w-full flex items-center justify-center",
-        "bg-cover bg-center bg-no-repeat",
+        "relative min-h-screen w-full flex items-center justify-center bg-cover bg-center bg-no-repeat",
         className
       )}
       style={{
@@ -22,11 +21,11 @@ const Hero = React.forwardRef<HTMLDivElement, HeroProps>(
       {...props}
     >
       {/* Capa oscura con 70% de opacidad */}
-      <div className="absolute inset-0 bg-black opacity-70" />
+      <div className="absolute inset-0 bg-black/70" />
       
       {/* Contenido centrado */}
       <div className="relative z-10 text-center text-white">
-        <h1 className="text-lg mb-2" style={{ fontSize: '18px' }}>
+        <h1 className="mb-2 text-lg" style={{ fontSize: '18px' }}>
           {welcomeText}
         </h1>
         <h2 className="text-2xl font-medium" style={{ fontSize: '24px' }}>

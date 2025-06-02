@@ -33,10 +33,8 @@ const ScrollBar = React.forwardRef<
     orientation={orientation}
     className={cn(
       "flex touch-none select-none transition-colors",
-      orientation === "vertical" &&
-        "h-full w-[16px] p-[6px]", // Container con padding para el track
-      orientation === "horizontal" &&
-        "h-[16px] flex-col w-full p-[6px]", // Container con padding para el track
+      orientation === "vertical" && "h-full w-4 p-1.5",
+      orientation === "horizontal" && "h-4 flex-col w-full p-1.5",
       className
     )}
     style={{
@@ -46,15 +44,15 @@ const ScrollBar = React.forwardRef<
     {...props}
   >
     <div className={cn(
-      "relative flex-1 bg-gray-300/80 rounded-[40px]",
-      orientation === "vertical" ? "w-1" : "h-1" // Track de 4px
+      "relative flex-1 bg-gray-300/80 rounded-full",
+      orientation === "vertical" ? "w-1" : "h-1"
     )}>
       <ScrollAreaPrimitive.ScrollAreaThumb 
         className={cn(
-          "flex-1 absolute bg-primary rounded-[40px]",
+          "flex-1 absolute bg-primary rounded-full",
           orientation === "vertical"
-            ? "!w-2 -left-[2px]" // 8px de ancho, -2px para centrar
-            : "!h-2 -top-[2px]", // 8px de alto, -2px para centrar
+            ? "!w-2 -left-0.5"
+            : "!h-2 -top-0.5"
         )}
       />
     </div>

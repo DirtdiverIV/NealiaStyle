@@ -24,10 +24,7 @@ const SectionFooter = React.forwardRef<HTMLDivElement, SectionFooterProps>(
       <div
         ref={ref}
         className={cn(
-          "w-full border border-b-0 bg-gray-100",
-          "rounded-t-[16px]",
-          "flex items-center justify-around",
-          "py-4 px-2",
+          "w-full border border-b-0 bg-gray-100 rounded-t-2xl flex items-center justify-around py-4 px-2",
           className
         )}
         style={{
@@ -44,14 +41,11 @@ const SectionFooter = React.forwardRef<HTMLDivElement, SectionFooterProps>(
               key={index}
               onClick={() => handleItemClick(item.id)}
               className={cn(
-                "flex flex-col items-center justify-center",
-                "px-4 py-2 rounded-md",
-                "transition-colors cursor-pointer",
-                "flex-1 mx-1",
+                "flex flex-col items-center justify-center px-4 py-2 rounded-md transition-colors cursor-pointer flex-1 mx-1",
                 isActive ? "bg-primary" : "bg-transparent hover:bg-gray-200"
               )}
             >
-              <Icon className="w-6 h-6 text-gray-600 mb-1" />
+              <Icon className="size-6 text-gray-600 mb-1" />
               <span className="text-sm font-medium text-gray-700 text-center">
                 {item.name}
               </span>

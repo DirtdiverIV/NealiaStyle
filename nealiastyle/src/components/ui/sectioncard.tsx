@@ -28,9 +28,7 @@ const SectionCard = React.forwardRef<HTMLDivElement, SectionCardProps>(
       <div
         ref={ref}
         className={cn(
-          "flex flex-col items-center justify-center gap-2",
-          "border-2 rounded w-full",
-          "transition-colors hover:bg-gray-50 cursor-pointer",
+          "flex flex-col items-center justify-center gap-2 border-2 rounded w-full transition-colors hover:bg-gray-50 cursor-pointer",
           sizeClasses[size],
           className
         )}

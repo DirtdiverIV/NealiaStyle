@@ -62,8 +62,8 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         {...props}
       >
-        {Icon && <span className="flex items-center"><Icon /></span>}
-        {!isIconOnly && <span className="flex items-center">{children}</span>}
+        {Icon && <span className="items-center"><Icon /></span>}
+        {!isIconOnly && <span className="items-center">{children}</span>}
       </Comp>
     )
   }
