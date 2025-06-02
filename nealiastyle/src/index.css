@@ -46,9 +46,9 @@
     --primary-pressed: #20574D;
     --secondary: #EDFAF8;
     --tertiary: #20574D;
-    --error: #E40000;
-    --success: #43CE5E;
-    --warning: #FFDC14;
+    --error: #FF3B30;
+    --success: #34C759;
+    --warning: #FFCC00;
   }
 
   /* Definición unificada de fuentes */

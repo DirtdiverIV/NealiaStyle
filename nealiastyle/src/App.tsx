@@ -21,12 +21,24 @@ import { Toaster } from "@/components/ui/sonner"
 import { Navbar } from "@/components/ui/navbar"
 import { useState, useEffect } from "react"
 import { toast } from "sonner"
-import { Plus, ArrowRight, MoreVertical, Settings, User, LogOut, FileEdit } from 'lucide-react'
+import { Plus, ArrowRight, MoreVertical, Settings, User, LogOut, FileEdit, Home } from 'lucide-react'
 import { DateRange } from "react-day-picker"
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion"
+import { SectionCard } from "@/components/ui/sectioncard"
+import { SectionFooter, type SectionFooterItem } from "@/components/ui/sectionfooter"
+import { SearchInput } from "@/components/ui/searchinput"
+import { Hero } from "@/components/ui/hero"
 
 function App() {
   const [range, setRange] = useState<DateRange | undefined>(undefined);
   const [theme, setTheme] = useState("health");
+  const [activeSection, setActiveSection] = useState("home");
+
+  const sectionFooterItems: SectionFooterItem[] = [
+    { icon: Home, name: "Inicio", id: "home" },
+    { icon: User, name: "Perfil", id: "profile" },
+    { icon: Settings, name: "Ajustes", id: "settings" },
+  ];
 
   useEffect(() => {
     document.documentElement.classList.remove("theme-health", "theme-vision", "theme-log");
@@ -61,6 +73,14 @@ function App() {
                     <div className="flex items-center gap-4">
                       <Button variant="outlined">Botón Outlined</Button>
                       <Button variant="outlined" icon={ArrowRight}>Outlined con Icono</Button>
+                    </div>
+                    <div className="flex items-center gap-4">
+                      <Button variant="neutral">Botón Neutral</Button>
+                      <Button variant="neutral" icon={User}>Neutral con Icono</Button>
+                    </div>
+                    <div className="flex items-center gap-4">
+                      <Button variant="neutral-outlined">Botón Neutral Outlined</Button>
+                      <Button variant="neutral-outlined" icon={Settings}>Neutral Outlined con Icono</Button>
                     </div>
                   </div>
                 </div>
@@ -113,6 +133,34 @@ function App() {
                       </DialogHeader>
                     </DialogContent>
                   </Dialog>
+                </div>
+
+                <div>
+                  <div className="flex items-center gap-4 mb-4">
+                    <h3 className="text-lg font-semibold text-gray-700">Accordion</h3>
+                    <Separator orientation="vertical" className="h-4 bg-gray-200" />
+                    <span className="text-sm text-gray-600">Acordeón para mostrar/ocultar contenido</span>
+                  </div>
+                  <Accordion type="single" collapsible className="w-full">
+                    <AccordionItem value="item-1">
+                      <AccordionTrigger>¿Qué es Nealia?</AccordionTrigger>
+                      <AccordionContent>
+                        Nealia es una librería de componentes UI reutilizables y modernos.
+                      </AccordionContent>
+                    </AccordionItem>
+                    <AccordionItem value="item-2">
+                      <AccordionTrigger>¿Cómo se usa?</AccordionTrigger>
+                      <AccordionContent>
+                        Importa el componente que necesites y utilízalo en tu aplicación React.
+                      </AccordionContent>
+                    </AccordionItem>
+                    <AccordionItem value="item-3">
+                      <AccordionTrigger>¿Puedo personalizar los estilos?</AccordionTrigger>
+                      <AccordionContent>
+                        Sí, puedes personalizar los estilos usando clases y props.
+                      </AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
                 </div>
               </div>
             </section>
@@ -546,7 +594,7 @@ function App() {
                       <AlertDescription>
                         Este es un mensaje informativo con acciones.
                         <div className="mt-2">
-                          <Button variant="outlined" size="sm">Saber más</Button>
+                          <Button variant="neutral-outlined" size="sm">Saber más</Button>
                         </div>
                       </AlertDescription>
                     </Alert>
@@ -556,8 +604,8 @@ function App() {
                       <AlertDescription>
                         Ha ocurrido un error que requiere tu atención.
                         <div className="mt-2 space-x-2">
-                          <Button variant="outlined">Resolver</Button>
-                          <Button variant="outlined">Ignorar</Button>
+                          <Button variant="neutral">Resolver</Button>
+                          <Button variant="neutral-outlined">Ignorar</Button>
                         </div>
                       </AlertDescription>
                     </Alert>
@@ -567,10 +615,10 @@ function App() {
                       <AlertDescription>
                         Hay una nueva versión disponible del sistema.
                         <div className="mt-2 space-x-2">
-                          <Button variant="outlined" size="sm">
+                          <Button variant="neutral" size="sm">
                             Actualizar Ahora
                           </Button>
-                          <Button variant="outlined" size="sm">
+                          <Button variant="neutral-outlined" size="sm">
                             Recordar más tarde
                           </Button>
                         </div>
@@ -580,9 +628,41 @@ function App() {
                 </div>
               </div>
             </section>
+
+            {/* COMPONENTES PERSONALIZADOS */}
+            <section className="mb-12 p-6 rounded-lg bg-white shadow-sm border border-gray-100">
+              <h2 className="text-2xl font-semibold mb-6 text-gray-800">Componentes Personalizados</h2>
+              <p className="text-gray-600 mb-8">Componentes personalizados utilizando otros componentes.</p>
+              <div className="mb-10">
+                <h3 className="text-lg font-semibold text-gray-700 mb-4">Hero</h3>
+                <Hero userName="David Gómez" welcomeText="Bienvenido" className="rounded-xl min-h-[300px] max-h-[400px] overflow-hidden" />
+              </div>
+              <div className="mb-6 max-w-md mx-auto">
+                <h3 className="text-lg font-semibold text-gray-700 mb-4">Buscador</h3>
+                <SearchInput placeholder="Buscar sección..." onSearch={(term) => toast.info(`Buscando: ${term}`)} />
+              </div>
+              <div className="mb-8">
+                <h3 className="text-lg font-semibold text-gray-700 mb-4">Tarjetas de Sección</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                  <SectionCard icon={Home} name="Inicio" size="md" />
+                  <SectionCard icon={User} name="Perfil" size="md" />
+                  <SectionCard icon={Settings} name="Ajustes" size="md" />
+                </div>
+              </div>
+              <div className="mb-8">
+                <h3 className="text-lg font-semibold text-gray-700 mb-4">Navegación</h3>
+                <SectionFooter
+                  items={sectionFooterItems}
+                  activeSection={activeSection}
+                  onSectionChange={setActiveSection}
+                  className="max-w-2xl mx-auto"
+                />
+              </div>
+              <div className="text-center text-gray-500 text-sm">Selecciona una sección para ver más detalles.</div>
+            </section>
           </div>
+          <Toaster />
         </main>
-        <Toaster />
       </div>
     </>
   )

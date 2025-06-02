@@ -15,6 +15,10 @@ const buttonVariants = cva(
           "rounded-[24px] bg-white border-2 border-primary text-black hover:bg-primary hover:text-black active:bg-primary-pressed active:text-white active:border-primary-pressed",
         "icon-only":
           "rounded-full bg-transparent text-black hover:bg-secondary",
+        neutral:
+          "rounded-[24px] bg-[#212529] border border-[#212529] border-[1.5px] text-white shadow hover:bg-[#495057] hover:text-white active:bg-[#ADB5BD] active:text-black active:border-[#212529] active:border-[1.5px]",
+        "neutral-outlined":
+          "rounded-[24px] bg-white border border-[#212529] border-2 text-black hover:bg-[#495057] hover:border-[#495057] hover:text-white active:bg-[#ADB5BD] active:border-[#212529] active:border-[1.5px] active:text-black",
       },
       size: {
         default: "h-10 px-6",
