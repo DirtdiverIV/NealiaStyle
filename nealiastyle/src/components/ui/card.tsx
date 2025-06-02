@@ -2,6 +2,30 @@ import * as React from "react"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * Card UI component para mostrar contenido agrupado en un contenedor estilizado.
+ * Incluye subcomponentes para header, title, description, content y footer.
+ *
+ * ## Ejemplo de uso:
+ *
+ * ```tsx
+ * import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "./card";
+ *
+ * <Card>
+ *   <CardHeader>
+ *     <CardTitle>Título</CardTitle>
+ *     <CardDescription>Descripción</CardDescription>
+ *   </CardHeader>
+ *   <CardContent>Contenido principal</CardContent>
+ *   <CardFooter>Pie de tarjeta</CardFooter>
+ * </Card>
+ * ```
+ *
+ * ## Props principales:
+ * - `className`: string — Clases personalizadas.
+ * - `children`: ReactNode — Contenido del card o subcomponentes.
+ */
+
 const Card = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>

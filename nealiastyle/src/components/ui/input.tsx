@@ -2,6 +2,24 @@ import * as React from "react"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * Input UI component reutilizable para formularios.
+ * Permite personalizar estilos y props estándar de un input HTML.
+ *
+ * ## Ejemplo de uso:
+ *
+ * ```tsx
+ * import { Input } from "./input";
+ *
+ * <Input type="text" placeholder="Nombre" />
+ * ```
+ *
+ * ## Props principales:
+ * - `type`: string — Tipo de input (text, password, email, etc).
+ * - `className`: string — Clases personalizadas.
+ * - Otros props estándar de input HTML.
+ */
+
 const Input = React.forwardRef<HTMLInputElement, React.ComponentProps<"input">>(
   ({ className, type, ...props }, ref) => {
     return (

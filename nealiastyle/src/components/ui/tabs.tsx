@@ -5,6 +5,31 @@ import * as TabsPrimitive from "@radix-ui/react-tabs"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * Tabs UI component basado en Radix UI.
+ * Permite organizar contenido en pestañas navegables.
+ *
+ * ## Ejemplo de uso:
+ *
+ * ```tsx
+ * import { Tabs, TabsList, TabsTrigger, TabsContent } from "./tabs";
+ *
+ * <Tabs defaultValue="tab1">
+ *   <TabsList>
+ *     <TabsTrigger value="tab1">Tab 1</TabsTrigger>
+ *     <TabsTrigger value="tab2">Tab 2</TabsTrigger>
+ *   </TabsList>
+ *   <TabsContent value="tab1">Contenido 1</TabsContent>
+ *   <TabsContent value="tab2">Contenido 2</TabsContent>
+ * </Tabs>
+ * ```
+ *
+ * ## Props principales:
+ * - `defaultValue`: string — Valor de la pestaña activa por defecto.
+ * - `onValueChange`: (value: string) => void — Callback al cambiar de pestaña.
+ * - `className`: string — Clases personalizadas.
+ */
+
 const Tabs = TabsPrimitive.Root
 
 const TabsList = React.forwardRef<

@@ -5,6 +5,24 @@ import * as SwitchPrimitives from "@radix-ui/react-switch"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * Switch UI component basado en Radix UI.
+ * Permite alternar entre dos estados (on/off) con un control deslizante.
+ *
+ * ## Ejemplo de uso:
+ *
+ * ```tsx
+ * import { Switch } from "./switch";
+ *
+ * <Switch checked={valor} onCheckedChange={setValor} />
+ * ```
+ *
+ * ## Props principales:
+ * - `checked`: boolean — Estado del switch.
+ * - `onCheckedChange`: (checked) => void — Callback al cambiar el estado.
+ * - `className`: string — Clases personalizadas.
+ */
+
 const Switch = React.forwardRef<
   React.ElementRef<typeof SwitchPrimitives.Root>,
   React.ComponentPropsWithoutRef<typeof SwitchPrimitives.Root>

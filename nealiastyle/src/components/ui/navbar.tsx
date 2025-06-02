@@ -1,3 +1,18 @@
+/**
+ * Navbar UI component para mostrar una barra de navegación superior con logo y selector de tema.
+ *
+ * ## Ejemplo de uso:
+ *
+ * ```tsx
+ * import { Navbar } from "./navbar";
+ *
+ * <Navbar theme="health" onThemeChange={setTheme} />
+ * ```
+ *
+ * ## Props principales:
+ * - `theme`: string — Tema actual ("health", "vision", "log").
+ * - `onThemeChange`: (theme: string) => void — Callback al cambiar el tema.
+ */
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import logoHealth from "@/assets/logos/logoHealth.png"
 import logoVision from "@/assets/logos/logoVision.png"

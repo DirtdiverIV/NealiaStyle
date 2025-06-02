@@ -3,6 +3,26 @@ import { useState } from "react"
 import { Search, ArrowRight } from "lucide-react"
 import { cn } from "@/lib/utils"
 
+/**
+ * SearchInput UI component para búsquedas con input y botón de acción.
+ * Permite buscar texto y limpiar el campo fácilmente.
+ *
+ * ## Ejemplo de uso:
+ *
+ * ```tsx
+ * import { SearchInput } from "./searchinput";
+ *
+ * <SearchInput placeholder="Buscar..." onSearch={fn} onClear={fn} />
+ * ```
+ *
+ * ## Props principales:
+ * - `placeholder`: string — Texto del placeholder.
+ * - `onSearch`: (searchTerm: string) => void — Callback al buscar.
+ * - `onClear`: () => void — Callback al limpiar.
+ * - `defaultValue`: string — Valor inicial.
+ * - `className`: string — Clases personalizadas.
+ */
+
 interface SearchInputProps extends Omit<React.ComponentProps<"input">, 'onChange' | 'value'> {
   placeholder?: string
   onSearch?: (searchTerm: string) => void

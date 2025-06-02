@@ -6,6 +6,30 @@ import { Check, ChevronDown, ChevronUp } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * Select UI component basado en Radix UI.
+ * Permite seleccionar una opción de una lista desplegable con soporte para grupos, labels y scroll.
+ *
+ * ## Ejemplo de uso:
+ *
+ * ```tsx
+ * import { Select, SelectTrigger, SelectContent, SelectItem } from "./select";
+ *
+ * <Select>
+ *   <SelectTrigger>Selecciona una opción</SelectTrigger>
+ *   <SelectContent>
+ *     <SelectItem value="1">Uno</SelectItem>
+ *     <SelectItem value="2">Dos</SelectItem>
+ *   </SelectContent>
+ * </Select>
+ * ```
+ *
+ * ## Props principales:
+ * - `children`: ReactNode — Elementos hijos (trigger, content, items).
+ * - `className`: string — Clases personalizadas.
+ * - Otros props según subcomponentes (ver Radix UI docs).
+ */
+
 const Select = SelectPrimitive.Root
 
 const SelectGroup = SelectPrimitive.Group

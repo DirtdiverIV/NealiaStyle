@@ -6,6 +6,24 @@ import { DayPicker } from "react-day-picker"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * Calendar UI component basado en react-day-picker.
+ * Permite mostrar y seleccionar fechas, soporta selección de rango y personalización.
+ *
+ * ## Ejemplo de uso:
+ *
+ * ```tsx
+ * import { Calendar } from "./calendar";
+ *
+ * <Calendar mode="single" selected={new Date()} onSelect={setDate} />
+ * ```
+ *
+ * ## Props principales:
+ * - Todos los props de DayPicker (ver docs react-day-picker).
+ * - `className`: string — Clases personalizadas.
+ * - `showOutsideDays`: boolean — Mostrar días fuera del mes.
+ */
+
 export type CalendarProps = React.ComponentProps<typeof DayPicker>
 
 function Calendar({

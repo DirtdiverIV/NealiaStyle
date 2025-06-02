@@ -3,6 +3,27 @@ import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * Alert UI component para mostrar mensajes de estado o notificaciones.
+ * Incluye variantes para diferentes tipos de alerta (éxito, error, warning, info, etc).
+ *
+ * ## Ejemplo de uso:
+ *
+ * ```tsx
+ * import { Alert, AlertTitle, AlertDescription } from "./alert";
+ *
+ * <Alert variant="success">
+ *   <AlertTitle>¡Éxito!</AlertTitle>
+ *   <AlertDescription>La operación se realizó correctamente.</AlertDescription>
+ * </Alert>
+ * ```
+ *
+ * ## Props principales:
+ * - `variant`: "default" | "destructive" | "error" | "success" | "warning" | "info" — Tipo de alerta.
+ * - `className`: string — Permite añadir clases personalizadas.
+ * - `children`: ReactNode — Elementos hijos (título, descripción, iconos).
+ */
+
 const alertVariants = cva(
   "relative w-full rounded-lg px-4 py-3 text-sm [&>svg+div]:-translate-y-1 [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg~*]:pl-7",
   {

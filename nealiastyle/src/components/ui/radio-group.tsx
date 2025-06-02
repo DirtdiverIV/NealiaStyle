@@ -4,6 +4,27 @@ import * as React from "react"
 import * as RadioGroupPrimitive from "@radix-ui/react-radio-group"
 import { cn } from "@/lib/utils"
 
+/**
+ * RadioGroup UI component basado en Radix UI.
+ * Permite seleccionar una opción entre varias, con estilos personalizados.
+ *
+ * ## Ejemplo de uso:
+ *
+ * ```tsx
+ * import { RadioGroup, RadioGroupItem } from "./radio-group";
+ *
+ * <RadioGroup value={valor} onValueChange={setValor}>
+ *   <RadioGroupItem value="1" />
+ *   <RadioGroupItem value="2" />
+ * </RadioGroup>
+ * ```
+ *
+ * ## Props principales:
+ * - `value`: string — Valor seleccionado.
+ * - `onValueChange`: (value: string) => void — Callback al cambiar la selección.
+ * - `className`: string — Clases personalizadas.
+ */
+
 const RadioGroup = React.forwardRef<
   React.ElementRef<typeof RadioGroupPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Root>

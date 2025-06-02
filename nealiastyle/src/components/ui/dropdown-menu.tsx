@@ -7,6 +7,30 @@ import type { LucideIcon } from 'lucide-react'
 
 import { cn } from "@/lib/utils"
 
+/**
+ * DropdownMenu UI component basado en Radix UI.
+ * Permite crear menús desplegables con soporte para submenús, radio, checkbox y atajos.
+ *
+ * ## Ejemplo de uso:
+ *
+ * ```tsx
+ * import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from "./dropdown-menu";
+ *
+ * <DropdownMenu>
+ *   <DropdownMenuTrigger>Opciones</DropdownMenuTrigger>
+ *   <DropdownMenuContent>
+ *     <DropdownMenuItem>Perfil</DropdownMenuItem>
+ *     <DropdownMenuItem>Salir</DropdownMenuItem>
+ *   </DropdownMenuContent>
+ * </DropdownMenu>
+ * ```
+ *
+ * ## Props principales:
+ * - `children`: ReactNode — Elementos hijos (trigger, content, items).
+ * - `className`: string — Clases personalizadas.
+ * - Otros props según subcomponentes (ver Radix UI docs).
+ */
+
 const DropdownMenu = DropdownMenuPrimitive.Root
 
 const DropdownMenuTrigger = DropdownMenuPrimitive.Trigger

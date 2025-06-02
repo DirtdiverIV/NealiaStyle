@@ -5,8 +5,8 @@ Esta es una lista de tareas para optimizar los componentes de la carpeta `ui`.
 Por cada componente, realiza las siguientes tareas:
 
 1. [x] **Optimizar clases de Tailwind**: Asegurarse de que se están usando correctamente y optimizarlas si es posible, sin cambiar el estilo visual.
-2. [ ] **Añadir comentario de uso**: Añadir un comentario en el componente explicando cómo usarlo, mostrando un ejemplo y listando las props que acepta.
-3. [ ] **Añadir instrucciones en el front**: Añadir instrucciones para el uso del componente en el frontend.
+2. [x] **Añadir comentario de uso**: Añadir un comentario en el componente explicando cómo usarlo, mostrando un ejemplo y listando las props que acepta.
+3. [x] **Añadir instrucciones en el front**: Añadir instrucciones para el uso del componente en el frontend.
 
 ---
 
@@ -14,125 +14,125 @@ Por cada componente, realiza las siguientes tareas:
 
 - **accordion.tsx**
   - [x] Optimizar clases de Tailwind
-  - [ ] Añadir comentario de uso
-  - [ ] Añadir instrucciones en el front
+  - [x] Añadir comentario de uso
+  - [x] Añadir instrucciones en el front
 - **alert.tsx**
   - [x] Optimizar clases de Tailwind
-  - [ ] Añadir comentario de uso
-  - [ ] Añadir instrucciones en el front
+  - [x] Añadir comentario de uso
+  - [x] Añadir instrucciones en el front
 - **avatar.tsx**
   - [x] Optimizar clases de Tailwind
-  - [ ] Añadir comentario de uso
-  - [ ] Añadir instrucciones en el front
+  - [x] Añadir comentario de uso
+  - [x] Añadir instrucciones en el front
 - **badge.tsx**
   - [x] Optimizar clases de Tailwind
-  - [ ] Añadir comentario de uso
-  - [ ] Añadir instrucciones en el front
+  - [x] Añadir comentario de uso
+  - [x] Añadir instrucciones en el front
 - **button.tsx**
   - [x] Optimizar clases de Tailwind
-  - [ ] Añadir comentario de uso
-  - [ ] Añadir instrucciones en el front
+  - [x] Añadir comentario de uso
+  - [x] Añadir instrucciones en el front
 - **calendar.tsx**
   - [x] Optimizar clases de Tailwind
-  - [ ] Añadir comentario de uso
-  - [ ] Añadir instrucciones en el front
+  - [x] Añadir comentario de uso
+  - [x] Añadir instrucciones en el front
 - **card.tsx**
   - [x] Optimizar clases de Tailwind
-  - [ ] Añadir comentario de uso
-  - [ ] Añadir instrucciones en el front
+  - [x] Añadir comentario de uso
+  - [x] Añadir instrucciones en el front
 - **checkbox.tsx**
   - [x] Optimizar clases de Tailwind
-  - [ ] Añadir comentario de uso
-  - [ ] Añadir instrucciones en el front
+  - [x] Añadir comentario de uso
+  - [x] Añadir instrucciones en el front
 - **command.tsx**
   - [x] Optimizar clases de Tailwind
-  - [ ] Añadir comentario de uso
+  - [x] Añadir comentario de uso
   - [ ] Añadir instrucciones en el front
 - **dialog.tsx**
   - [x] Optimizar clases de Tailwind
-  - [ ] Añadir comentario de uso
-  - [ ] Añadir instrucciones en el front
+  - [x] Añadir comentario de uso
+  - [x] Añadir instrucciones en el front
 - **dropdown-menu.tsx**
   - [x] Optimizar clases de Tailwind
-  - [ ] Añadir comentario de uso
-  - [ ] Añadir instrucciones en el front
+  - [x] Añadir comentario de uso
+  - [x] Añadir instrucciones en el front
 - **hero.tsx**
   - [x] Optimizar clases de Tailwind
-  - [ ] Añadir comentario de uso
-  - [ ] Añadir instrucciones en el front
+  - [x] Añadir comentario de uso
+  - [x] Añadir instrucciones en el front
 - **input.tsx**
   - [x] Optimizar clases de Tailwind
-  - [ ] Añadir comentario de uso
-  - [ ] Añadir instrucciones en el front
+  - [x] Añadir comentario de uso
+  - [x] Añadir instrucciones en el front
 - **navbar.tsx**
   - [x] Optimizar clases de Tailwind
-  - [ ] Añadir comentario de uso
+  - [x] Añadir comentario de uso
   - [ ] Añadir instrucciones en el front
 - **pagination.tsx**
   - [x] Optimizar clases de Tailwind
-  - [ ] Añadir comentario de uso
-  - [ ] Añadir instrucciones en el front
+  - [x] Añadir comentario de uso
+  - [x] Añadir instrucciones en el front
 - **popover.tsx**
   - [x] Optimizar clases de Tailwind
-  - [ ] Añadir comentario de uso
+  - [x] Añadir comentario de uso
   - [ ] Añadir instrucciones en el front
 - **radio-group.tsx**
   - [x] Optimizar clases de Tailwind
-  - [ ] Añadir comentario de uso
-  - [ ] Añadir instrucciones en el front
+  - [x] Añadir comentario de uso
+  - [x] Añadir instrucciones en el front
 - **scroll-area.tsx**
   - [x] Optimizar clases de Tailwind
-  - [ ] Añadir comentario de uso
-  - [ ] Añadir instrucciones en el front
+  - [x] Añadir comentario de uso
+  - [x] Añadir instrucciones en el front
 - **searchinput.tsx**
   - [x] Optimizar clases de Tailwind
-  - [ ] Añadir comentario de uso
-  - [ ] Añadir instrucciones en el front
+  - [x] Añadir comentario de uso
+  - [x] Añadir instrucciones en el front
 - **sectioncard.tsx**
   - [x] Optimizar clases de Tailwind
-  - [ ] Añadir comentario de uso
-  - [ ] Añadir instrucciones en el front
+  - [x] Añadir comentario de uso
+  - [x] Añadir instrucciones en el front
 - **sectionfooter.tsx**
   - [x] Optimizar clases de Tailwind
-  - [ ] Añadir comentario de uso
-  - [ ] Añadir instrucciones en el front
+  - [x] Añadir comentario de uso
+  - [x] Añadir instrucciones en el front
 - **select.tsx**
   - [x] Optimizar clases de Tailwind
-  - [ ] Añadir comentario de uso
-  - [ ] Añadir instrucciones en el front
+  - [x] Añadir comentario de uso
+  - [x] Añadir instrucciones en el front
 - **sheet.tsx**
   - [x] Optimizar clases de Tailwind
-  - [ ] Añadir comentario de uso
+  - [x] Añadir comentario de uso
   - [ ] Añadir instrucciones en el front
 - **skeleton.tsx**
   - [x] Optimizar clases de Tailwind
-  - [ ] Añadir comentario de uso
-  - [ ] Añadir instrucciones en el front
+  - [x] Añadir comentario de uso
+  - [x] Añadir instrucciones en el front
 - **slider.tsx**
   - [x] Optimizar clases de Tailwind
-  - [ ] Añadir comentario de uso
-  - [ ] Añadir instrucciones en el front
+  - [x] Añadir comentario de uso
+  - [x] Añadir instrucciones en el front
 - **sonner.tsx**
   - [x] Optimizar clases de Tailwind
-  - [ ] Añadir comentario de uso
+  - [x] Añadir comentario de uso
   - [ ] Añadir instrucciones en el front
 - **switch.tsx**
   - [x] Optimizar clases de Tailwind
-  - [ ] Añadir comentario de uso
-  - [ ] Añadir instrucciones en el front
+  - [x] Añadir comentario de uso
+  - [x] Añadir instrucciones en el front
 - **tabs.tsx**
   - [x] Optimizar clases de Tailwind
-  - [ ] Añadir comentario de uso
-  - [ ] Añadir instrucciones en el front
+  - [x] Añadir comentario de uso
+  - [x] Añadir instrucciones en el front
 - **table.tsx**
   - [x] Optimizar clases de Tailwind
-  - [ ] Añadir comentario de uso
-  - [ ] Añadir instrucciones en el front
+  - [x] Añadir comentario de uso
+  - [x] Añadir instrucciones en el front
 - **textarea.tsx**
   - [x] Optimizar clases de Tailwind
-  - [ ] Añadir comentario de uso
-  - [ ] Añadir instrucciones en el front
+  - [x] Añadir comentario de uso
+  - [x] Añadir instrucciones en el front
 - **separator.tsx**
   - [x] Optimizar clases de Tailwind
-  - [ ] Añadir comentario de uso
-  - [ ] Añadir instrucciones en el front 
+  - [x] Añadir comentario de uso
+  - [x] Añadir instrucciones en el front 

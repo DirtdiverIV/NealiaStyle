@@ -7,6 +7,28 @@ import { X } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * Sheet UI component basado en Radix UI Dialog.
+ * Permite mostrar paneles laterales o modales deslizables desde cualquier lado de la pantalla.
+ *
+ * ## Ejemplo de uso:
+ *
+ * ```tsx
+ * import { Sheet, SheetTrigger, SheetContent } from "./sheet";
+ *
+ * <Sheet>
+ *   <SheetTrigger>Abrir panel</SheetTrigger>
+ *   <SheetContent side="right">Contenido</SheetContent>
+ * </Sheet>
+ * ```
+ *
+ * ## Props principales:
+ * - `side`: "top" | "bottom" | "left" | "right" — Lado desde el que aparece el panel.
+ * - `open`: boolean — Controla la visibilidad.
+ * - `onOpenChange`: (open) => void — Callback al abrir/cerrar.
+ * - `className`: string — Clases personalizadas.
+ */
+
 const Sheet = SheetPrimitive.Root
 
 const SheetTrigger = SheetPrimitive.Trigger

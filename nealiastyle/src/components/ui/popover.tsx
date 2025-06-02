@@ -5,6 +5,27 @@ import * as PopoverPrimitive from "@radix-ui/react-popover"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * Popover UI component basado en Radix UI.
+ * Permite mostrar contenido flotante sobre otros elementos (tooltip avanzado).
+ *
+ * ## Ejemplo de uso:
+ *
+ * ```tsx
+ * import { Popover, PopoverTrigger, PopoverContent } from "./popover";
+ *
+ * <Popover>
+ *   <PopoverTrigger>Mostrar info</PopoverTrigger>
+ *   <PopoverContent>Contenido del popover</PopoverContent>
+ * </Popover>
+ * ```
+ *
+ * ## Props principales:
+ * - `children`: ReactNode — Elementos hijos (trigger, content).
+ * - `className`: string — Clases personalizadas.
+ * - Otros props según subcomponentes (ver Radix UI docs).
+ */
+
 const Popover = PopoverPrimitive.Root
 
 const PopoverTrigger = PopoverPrimitive.Trigger

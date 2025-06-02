@@ -2,6 +2,23 @@ import * as React from "react"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * Textarea UI component reutilizable para formularios.
+ * Permite personalizar estilos y props estándar de un textarea HTML.
+ *
+ * ## Ejemplo de uso:
+ *
+ * ```tsx
+ * import { Textarea } from "./textarea";
+ *
+ * <Textarea placeholder="Descripción" />
+ * ```
+ *
+ * ## Props principales:
+ * - `className`: string — Clases personalizadas.
+ * - Otros props estándar de textarea HTML.
+ */
+
 const Textarea = React.forwardRef<
   HTMLTextAreaElement,
   React.ComponentProps<"textarea">

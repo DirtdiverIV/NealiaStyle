@@ -19,6 +19,7 @@ import { ScrollArea } from "@/components/ui/scroll-area"
 import { Separator } from "@/components/ui/separator"
 import { Toaster } from "@/components/ui/sonner"
 import { Navbar } from "@/components/ui/navbar"
+import { InstructionsProvider, InstructionsModal, InstructionsButton } from "@/components/instructions"
 import { useState, useEffect } from "react"
 import { toast } from "sonner"
 import { Plus, ArrowRight, MoreVertical, Settings, User, LogOut, FileEdit, Home } from 'lucide-react'
@@ -46,13 +47,20 @@ function App() {
   }, [theme]);
 
   return (
-    <>
+    <InstructionsProvider>
       <div className="min-h-screen bg-background">
         <Navbar theme={theme} onThemeChange={setTheme} />
         <main className="pt-[72px] min-h-screen">
           <div className="p-8 max-w-7xl mx-auto">
             <div className="flex items-center justify-between mb-8">
               <h1 className="text-4xl font-bold">Libreria Nealia</h1>
+              <div className="flex items-center gap-4">
+                <div className="flex items-center gap-2 text-sm text-gray-600">
+                  <span>Haz clic en los iconos</span>
+                  <InstructionsButton disabled componentName="Button" />
+                  <span>para ver las instrucciones de cada componente</span>
+                </div>
+              </div>
             </div>
             
             {/* Interacción */}
@@ -62,6 +70,7 @@ function App() {
                 <div>
                   <div className="flex items-center gap-4 mb-4">
                     <h3 className="text-lg font-semibold text-gray-700">Button</h3>
+                    <InstructionsButton componentName="Button" />
                     <Separator orientation="vertical" className="h-4 bg-gray-200" />
                     <span className="text-sm text-gray-600">Botones interactivos con múltiples variantes y estados</span>
                   </div>
@@ -88,6 +97,7 @@ function App() {
                 <div>
                   <div className="flex items-center gap-4 mb-4">
                     <h3 className="text-lg font-semibold text-gray-700">DropdownMenu</h3>
+                    <InstructionsButton componentName="DropdownMenu" />
                     <Separator orientation="vertical" className="h-4 bg-gray-200" />
                     <span className="text-sm text-gray-600">Menú desplegable para acciones contextuales</span>
                   </div>
@@ -117,6 +127,7 @@ function App() {
                 <div>
                   <div className="flex items-center gap-4 mb-4">
                     <h3 className="text-lg font-semibold text-gray-700">Dialog</h3>
+                    <InstructionsButton componentName="Dialog" />
                     <Separator orientation="vertical" className="h-4 bg-gray-200" />
                     <span className="text-sm text-gray-600">Ventanas modales para información importante</span>
                   </div>
@@ -138,6 +149,7 @@ function App() {
                 <div>
                   <div className="flex items-center gap-4 mb-4">
                     <h3 className="text-lg font-semibold text-gray-700">Accordion</h3>
+                    <InstructionsButton componentName="Accordion" />
                     <Separator orientation="vertical" className="h-4 bg-gray-200" />
                     <span className="text-sm text-gray-600">Acordeón para mostrar/ocultar contenido</span>
                   </div>
@@ -174,6 +186,7 @@ function App() {
                   <div>
                     <div className="flex items-center gap-4 mb-4">
                       <h3 className="text-lg font-semibold text-gray-700">Input</h3>
+                      <InstructionsButton componentName="Input" />
                       <Separator orientation="vertical" className="h-4 bg-gray-200" />
                       <span className="text-sm text-gray-600">Campo de texto para entrada de datos</span>
                     </div>
@@ -183,6 +196,7 @@ function App() {
                   <div>
                     <div className="flex items-center gap-4 mb-4">
                       <h3 className="text-lg font-semibold text-gray-700">Select</h3>
+                      <InstructionsButton componentName="Select" />
                       <Separator orientation="vertical" className="h-4 bg-gray-200" />
                       <span className="text-sm text-gray-600">Lista desplegable para selección de opciones</span>
                     </div>
@@ -200,6 +214,7 @@ function App() {
                   <div>
                     <div className="flex items-center gap-4 mb-4">
                       <h3 className="text-lg font-semibold text-gray-700">Textarea</h3>
+                      <InstructionsButton componentName="Textarea" />
                       <Separator orientation="vertical" className="h-4 bg-gray-200" />
                       <span className="text-sm text-gray-600">Campo de texto multilínea para contenido extenso</span>
                     </div>
@@ -212,6 +227,7 @@ function App() {
                   <div>
                     <div className="flex items-center gap-4 mb-4">
                       <h3 className="text-lg font-semibold text-gray-700">Checkbox</h3>
+                      <InstructionsButton componentName="Checkbox" />
                       <Separator orientation="vertical" className="h-4 bg-gray-200" />
                       <span className="text-sm text-gray-600">Casillas de verificación para selección múltiple</span>
                     </div>
@@ -224,6 +240,7 @@ function App() {
                   <div>
                     <div className="flex items-center gap-4 mb-4">
                       <h3 className="text-lg font-semibold text-gray-700">RadioGroup</h3>
+                      <InstructionsButton componentName="RadioGroup" />
                       <Separator orientation="vertical" className="h-4 bg-gray-200" />
                       <span className="text-sm text-gray-600">Grupo de opciones para selección única</span>
                     </div>
@@ -242,6 +259,7 @@ function App() {
                   <div>
                     <div className="flex items-center gap-4 mb-4">
                       <h3 className="text-lg font-semibold text-gray-700">Switch</h3>
+                      <InstructionsButton componentName="Switch" />
                       <Separator orientation="vertical" className="h-4 bg-gray-200" />
                       <span className="text-sm text-gray-600">Interruptor para alternar estados</span>
                     </div>
@@ -263,6 +281,7 @@ function App() {
                   <div>
                     <div className="flex items-center gap-4 mb-4">
                       <h3 className="text-lg font-semibold text-gray-700">Calendar</h3>
+                      <InstructionsButton componentName="Calendar" />
                       <Separator orientation="vertical" className="h-4 bg-gray-200" />
                       <span className="text-sm text-gray-600">Selector de fechas interactivo con rango</span>
                     </div>
@@ -279,6 +298,7 @@ function App() {
                   <div>
                     <div className="flex items-center gap-4 mb-4">
                       <h3 className="text-lg font-semibold text-gray-700">ScrollArea</h3>
+                      <InstructionsButton componentName="ScrollArea" />
                       <Separator orientation="vertical" className="h-4 bg-gray-200" />
                       <span className="text-sm text-gray-600">Área de desplazamiento personalizada con scroll suave</span>
                     </div>
@@ -308,6 +328,7 @@ function App() {
                   <div>
                     <div className="flex items-center gap-4 mb-4">
                       <h3 className="text-lg font-semibold text-gray-700">Skeleton</h3>
+                      <InstructionsButton componentName="Skeleton" />
                       <Separator orientation="vertical" className="h-4 bg-gray-200" />
                       <span className="text-sm text-gray-600">Indicador de carga con animación fluida</span>
                     </div>
@@ -323,6 +344,7 @@ function App() {
                   <div>
                     <div className="flex items-center gap-4 mb-4">
                       <h3 className="text-lg font-semibold text-gray-700">Pagination</h3>
+                      <InstructionsButton componentName="Pagination" />
                       <Separator orientation="vertical" className="h-4 bg-gray-200" />
                       <span className="text-sm text-gray-600">Control de navegación entre páginas</span>
                     </div>
@@ -343,6 +365,7 @@ function App() {
                 <div>
                   <div className="flex items-center gap-4 mb-4">
                     <h3 className="text-lg font-semibold text-gray-700">Table</h3>
+                    <InstructionsButton componentName="Table" />
                     <Separator orientation="vertical" className="h-4 bg-gray-200" />
                     <span className="text-sm text-gray-600">Tabla de reglas de granja</span>
                   </div>
@@ -444,6 +467,8 @@ function App() {
                 <div>
                   <div className="flex items-center gap-4 mb-4">
                     <h3 className="text-lg font-semibold text-gray-700">Avatar y Badge</h3>
+                    <InstructionsButton componentName="Avatar" />
+                    <InstructionsButton componentName="Badge" />
                     <Separator orientation="vertical" className="h-4 bg-gray-200" />
                     <span className="text-sm text-gray-600">Avatar de usuario y etiquetas de estado</span>
                   </div>
@@ -504,6 +529,7 @@ function App() {
                 <div>
                   <div className="flex items-center gap-4 mb-4">
                     <h3 className="text-lg font-semibold text-gray-700">Slider</h3>
+                    <InstructionsButton componentName="Slider" />
                     <Separator orientation="vertical" className="h-4 bg-gray-200" />
                     <span className="text-sm text-gray-600">Control deslizante</span>
                   </div>
@@ -575,6 +601,7 @@ function App() {
                 <div>
                   <div className="flex items-center gap-4 mb-4">
                     <h3 className="text-lg font-semibold text-gray-700">Alert</h3>
+                    <InstructionsButton componentName="Alert" />
                     <Separator orientation="vertical" className="h-4 bg-gray-200" />
                     <span className="text-sm text-gray-600">Sistema de alertas y mensajes importantes</span>
                   </div>
@@ -634,15 +661,30 @@ function App() {
               <h2 className="text-2xl font-semibold mb-6 text-gray-800">Componentes Personalizados</h2>
               <p className="text-gray-600 mb-8">Componentes personalizados utilizando otros componentes.</p>
               <div className="mb-10">
-                <h3 className="text-lg font-semibold text-gray-700 mb-4">Hero</h3>
+                <div className="flex items-center gap-4 mb-4">
+                  <h3 className="text-lg font-semibold text-gray-700">Hero</h3>
+                  <InstructionsButton componentName="Hero" />
+                  <Separator orientation="vertical" className="h-4 bg-gray-200" />
+                  <span className="text-sm text-gray-600">Banner principal con imagen de fondo y contenido destacado</span>
+                </div>
                 <Hero userName="David Gómez" welcomeText="Bienvenido" className="rounded-xl min-h-[300px] max-h-[400px] overflow-hidden" />
               </div>
               <div className="mb-6 max-w-md mx-auto">
-                <h3 className="text-lg font-semibold text-gray-700 mb-4">Buscador</h3>
+                <div className="flex items-center gap-4 mb-4">
+                  <h3 className="text-lg font-semibold text-gray-700">Buscador</h3>
+                  <InstructionsButton componentName="SearchInput" />
+                  <Separator orientation="vertical" className="h-4 bg-gray-200" />
+                  <span className="text-sm text-gray-600">Campo de búsqueda con icono integrado</span>
+                </div>
                 <SearchInput placeholder="Buscar sección..." onSearch={(term) => toast.info(`Buscando: ${term}`)} />
               </div>
               <div className="mb-8">
-                <h3 className="text-lg font-semibold text-gray-700 mb-4">Tarjetas de Sección</h3>
+                <div className="flex items-center gap-4 mb-4">
+                  <h3 className="text-lg font-semibold text-gray-700">Tarjetas de Sección</h3>
+                  <InstructionsButton componentName="SectionCard" />
+                  <Separator orientation="vertical" className="h-4 bg-gray-200" />
+                  <span className="text-sm text-gray-600">Tarjetas para mostrar secciones con iconos</span>
+                </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                   <SectionCard icon={Home} name="Inicio" size="md" />
                   <SectionCard icon={User} name="Perfil" size="md" />
@@ -650,7 +692,12 @@ function App() {
                 </div>
               </div>
               <div className="mb-8">
-                <h3 className="text-lg font-semibold text-gray-700 mb-4">Navegación</h3>
+                <div className="flex items-center gap-4 mb-4">
+                  <h3 className="text-lg font-semibold text-gray-700">Navegación</h3>
+                  <InstructionsButton componentName="SectionFooter" />
+                  <Separator orientation="vertical" className="h-4 bg-gray-200" />
+                  <span className="text-sm text-gray-600">Navegación inferior con secciones activas</span>
+                </div>
                 <SectionFooter
                   items={sectionFooterItems}
                   activeSection={activeSection}
@@ -663,8 +710,9 @@ function App() {
           </div>
           <Toaster />
         </main>
+        <InstructionsModal />
       </div>
-    </>
+    </InstructionsProvider>
   )
 }
 

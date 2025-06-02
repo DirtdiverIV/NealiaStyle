@@ -2,6 +2,26 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 import type { LucideIcon } from "lucide-react";
 
+/**
+ * SectionCard UI component para mostrar una tarjeta de sección con icono y nombre.
+ * Permite diferentes tamaños y estilos personalizables.
+ *
+ * ## Ejemplo de uso:
+ *
+ * ```tsx
+ * import { SectionCard } from "./sectioncard";
+ * import { User } from "lucide-react";
+ *
+ * <SectionCard icon={User} name="Usuarios" size="md" />
+ * ```
+ *
+ * ## Props principales:
+ * - `icon`: LucideIcon — Icono a mostrar.
+ * - `name`: string — Nombre de la sección.
+ * - `size`: "sm" | "md" | "lg" | "xl" — Tamaño de la tarjeta.
+ * - `className`: string — Clases personalizadas.
+ */
+
 interface SectionCardProps extends React.HTMLAttributes<HTMLDivElement> {
   icon: LucideIcon;
   name: string;

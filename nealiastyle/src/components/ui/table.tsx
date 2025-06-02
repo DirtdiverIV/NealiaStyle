@@ -2,6 +2,29 @@ import * as React from "react"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * Table UI component para mostrar datos tabulares con estilos personalizados.
+ * Incluye subcomponentes para header, body, row, cell, etc.
+ *
+ * ## Ejemplo de uso:
+ *
+ * ```tsx
+ * import { Table, TableHeader, TableBody, TableRow, TableCell } from "./table";
+ *
+ * <Table>
+ *   <TableHeader>...</TableHeader>
+ *   <TableBody>
+ *     <TableRow>
+ *       <TableCell>Dato</TableCell>
+ *     </TableRow>
+ *   </TableBody>
+ * </Table>
+ * ```
+ *
+ * ## Props principales:
+ * - `className`: string — Clases personalizadas.
+ * - `children`: ReactNode — Contenido del table o subcomponentes.
+ */
 const Table = React.forwardRef<
   HTMLTableElement,
   React.HTMLAttributes<HTMLTableElement>

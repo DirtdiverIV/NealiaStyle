@@ -8,6 +8,31 @@ import { Search } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Dialog, DialogContent } from "@/components/ui/dialog"
 
+/**
+ * Command UI component basado en cmdk y Radix UI Dialog.
+ * Permite crear paletas de comandos, buscadores o menús rápidos.
+ *
+ * ## Ejemplo de uso:
+ *
+ * ```tsx
+ * import { CommandDialog, CommandInput, CommandList, CommandItem } from "./command";
+ *
+ * <CommandDialog open={open} onOpenChange={setOpen}>
+ *   <CommandInput placeholder="Buscar..." />
+ *   <CommandList>
+ *     <CommandItem>Opción 1</CommandItem>
+ *     <CommandItem>Opción 2</CommandItem>
+ *   </CommandList>
+ * </CommandDialog>
+ * ```
+ *
+ * ## Props principales:
+ * - `open`: boolean — Controla la visibilidad del dialog.
+ * - `onOpenChange`: (open) => void — Callback al abrir/cerrar.
+ * - `className`: string — Clases personalizadas.
+ * - `children`: ReactNode — Elementos hijos (input, items, etc).
+ */
+
 const Command = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive>,
   React.ComponentPropsWithoutRef<typeof CommandPrimitive>

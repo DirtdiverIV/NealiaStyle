@@ -2,6 +2,25 @@ import * as React from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { cn } from "@/lib/utils"
 
+/**
+ * Pagination UI component para navegar entre páginas de contenido.
+ * Muestra botones para avanzar, retroceder y seleccionar página.
+ *
+ * ## Ejemplo de uso:
+ *
+ * ```tsx
+ * import { Pagination } from "./pagination";
+ *
+ * <Pagination totalPages={10} currentPage={1} onPageChange={setPage} />
+ * ```
+ *
+ * ## Props principales:
+ * - `totalPages`: number — Total de páginas.
+ * - `currentPage`: number — Página actual.
+ * - `onPageChange`: (page: number) => void — Callback al cambiar de página.
+ * - `className`: string — Clases personalizadas.
+ */
+
 interface PaginationProps extends React.ComponentProps<"nav"> {
   totalPages: number
   currentPage: number

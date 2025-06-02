@@ -6,6 +6,24 @@ import { Check } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * Checkbox UI component basado en Radix UI.
+ * Permite seleccionar o deseleccionar una opción, con estilos personalizados.
+ *
+ * ## Ejemplo de uso:
+ *
+ * ```tsx
+ * import { Checkbox } from "./checkbox";
+ *
+ * <Checkbox checked={valor} onCheckedChange={setValor} />
+ * ```
+ *
+ * ## Props principales:
+ * - `checked`: boolean — Estado del checkbox.
+ * - `onCheckedChange`: (checked) => void — Callback al cambiar el estado.
+ * - `className`: string — Clases personalizadas.
+ */
+
 const Checkbox = React.forwardRef<
   React.ElementRef<typeof CheckboxPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root>

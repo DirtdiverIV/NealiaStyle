@@ -3,6 +3,27 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 import { X, Circle } from "lucide-react"
 
+/**
+ * Badge UI component para mostrar etiquetas, estados o tags con diferentes variantes.
+ * Permite mostrar badges redondeados, cuadrados, con opción de cierre y estados personalizados.
+ *
+ * ## Ejemplo de uso:
+ *
+ * ```tsx
+ * import { Badge } from "./badge";
+ *
+ * <Badge variant="tag-rounded">Etiqueta</Badge>
+ * <Badge variant="status-completed">Completado</Badge>
+ * <Badge variant="tag-rounded-closable" onClose={() => {}}>Cerrable</Badge>
+ * ```
+ *
+ * ## Props principales:
+ * - `variant`: string — Variante visual del badge (ver código para opciones).
+ * - `onClose`: () => void — Callback para cerrar el badge (si es closable).
+ * - `className`: string — Permite añadir clases personalizadas.
+ * - `children`: ReactNode — Contenido del badge.
+ */
+
 const badgeVariants = cva(
   "inline-flex items-center text-xs font-semibold transition-colors",
   {

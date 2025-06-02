@@ -2,6 +2,25 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 import type { LucideIcon } from "lucide-react";
 
+/**
+ * SectionFooter UI component para mostrar un footer de navegación por secciones con iconos.
+ * Permite resaltar la sección activa y manejar cambios de sección.
+ *
+ * ## Ejemplo de uso:
+ *
+ * ```tsx
+ * import { SectionFooter } from "./sectionfooter";
+ *
+ * <SectionFooter items={items} activeSection={active} onSectionChange={fn} />
+ * ```
+ *
+ * ## Props principales:
+ * - `items`: Array<{icon, name, id}> — Lista de secciones.
+ * - `activeSection`: string — ID de la sección activa.
+ * - `onSectionChange`: (id: string) => void — Callback al cambiar sección.
+ * - `className`: string — Clases personalizadas.
+ */
+
 interface SectionFooterItem {
   icon: LucideIcon;
   name: string;

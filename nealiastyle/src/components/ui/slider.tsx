@@ -5,6 +5,25 @@ import * as SliderPrimitive from "@radix-ui/react-slider"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * Slider UI component basado en Radix UI.
+ * Permite seleccionar un valor o rango de valores arrastrando un control deslizante.
+ *
+ * ## Ejemplo de uso:
+ *
+ * ```tsx
+ * import { Slider } from "./slider";
+ *
+ * <Slider min={0} max={100} step={1} defaultValue={[50]} />
+ * ```
+ *
+ * ## Props principales:
+ * - `min`, `max`, `step`: number — Configuración del rango.
+ * - `defaultValue`: number[] — Valor inicial.
+ * - `onValueChange`: (value: number[]) => void — Callback al cambiar valor.
+ * - `className`: string — Clases personalizadas.
+ */
+
 const Slider = React.forwardRef<
   React.ElementRef<typeof SliderPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root>

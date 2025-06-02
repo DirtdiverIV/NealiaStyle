@@ -5,6 +5,24 @@ import { Toaster as Sonner } from "sonner"
 
 type ToasterProps = React.ComponentProps<typeof Sonner>
 
+/**
+ * Toaster (Sonner) UI component para mostrar notificaciones flotantes.
+ * Permite personalizar el tema y los estilos de los toasts.
+ *
+ * ## Ejemplo de uso:
+ *
+ * ```tsx
+ * import { Toaster } from "./sonner";
+ *
+ * <Toaster />
+ * ```
+ *
+ * ## Props principales:
+ * - `theme`: string — Tema visual ("light", "dark", "system").
+ * - `className`: string — Clases personalizadas.
+ * - Otros props según Sonner docs.
+ */
+
 const Toaster = ({ ...props }: ToasterProps) => {
   const { theme = "system" } = useTheme()
 

@@ -4,6 +4,28 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 import { LucideIcon } from 'lucide-react'
 
+/**
+ * Button UI component reutilizable con variantes y tamaños personalizables.
+ * Basado en Radix UI y compatible con iconos.
+ *
+ * ## Ejemplo de uso:
+ *
+ * ```tsx
+ * import { Button } from "./button";
+ *
+ * <Button variant="default" size="lg">Guardar</Button>
+ * <Button variant="outlined" icon={Icono}>Con icono</Button>
+ * ```
+ *
+ * ## Props principales:
+ * - `variant`: "default" | "outlined" | "icon-only" | "neutral" | "neutral-outlined" — Variante visual.
+ * - `size`: "default" | "sm" | "lg" | "icon" — Tamaño del botón.
+ * - `icon`: LucideIcon — Icono opcional a mostrar.
+ * - `asChild`: boolean — Usar como Slot en vez de <button>.
+ * - `className`: string — Clases personalizadas.
+ * - `children`: ReactNode — Contenido del botón.
+ */
+
 const buttonVariants = cva(
   "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-bold font-[Mulish] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 box-border",
   {

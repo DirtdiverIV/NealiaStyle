@@ -2,6 +2,24 @@ import * as React from "react"
 import { cn } from "@/lib/utils"
 import vallcompanys from "@/assets/vallcompanys.jpg"
 
+/**
+ * Hero UI component para mostrar una sección de bienvenida con fondo personalizado.
+ * Permite personalizar el nombre de usuario y el texto de bienvenida.
+ *
+ * ## Ejemplo de uso:
+ *
+ * ```tsx
+ * import { Hero } from "./hero";
+ *
+ * <Hero userName="David" welcomeText="¡Hola!" />
+ * ```
+ *
+ * ## Props principales:
+ * - `userName`: string — Nombre del usuario a mostrar.
+ * - `welcomeText`: string — Texto de bienvenida.
+ * - `className`: string — Clases personalizadas.
+ */
+
 interface HeroProps extends React.HTMLAttributes<HTMLDivElement> {
   userName?: string
   welcomeText?: string

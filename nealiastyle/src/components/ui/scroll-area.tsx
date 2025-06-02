@@ -5,6 +5,23 @@ import * as ScrollAreaPrimitive from "@radix-ui/react-scroll-area"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * ScrollArea UI component basado en Radix UI.
+ * Permite mostrar contenido desplazable con barras de scroll personalizadas.
+ *
+ * ## Ejemplo de uso:
+ *
+ * ```tsx
+ * import { ScrollArea } from "./scroll-area";
+ *
+ * <ScrollArea className="h-48 w-64">Contenido largo...</ScrollArea>
+ * ```
+ *
+ * ## Props principales:
+ * - `children`: ReactNode — Contenido desplazable.
+ * - `className`: string — Clases personalizadas.
+ * - Otros props estándar de Radix ScrollArea.
+ */
 const ScrollArea = React.forwardRef<
   React.ElementRef<typeof ScrollAreaPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof ScrollAreaPrimitive.Root>

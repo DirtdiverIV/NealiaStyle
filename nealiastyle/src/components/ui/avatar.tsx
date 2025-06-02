@@ -5,6 +5,28 @@ import * as AvatarPrimitive from "@radix-ui/react-avatar"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * Avatar UI component basado en Radix UI.
+ * Permite mostrar la imagen de usuario, con fallback y estilos personalizables.
+ *
+ * ## Ejemplo de uso:
+ *
+ * ```tsx
+ * import { Avatar, AvatarImage, AvatarFallback } from "./avatar";
+ *
+ * <Avatar>
+ *   <AvatarImage src="/usuario.jpg" alt="Usuario" />
+ *   <AvatarFallback>U</AvatarFallback>
+ * </Avatar>
+ * ```
+ *
+ * ## Props principales:
+ * - `src` (AvatarImage): string — URL de la imagen.
+ * - `alt` (AvatarImage): string — Texto alternativo.
+ * - `className`: string — Permite añadir clases personalizadas.
+ * - `children`: ReactNode — Elementos hijos (AvatarImage, AvatarFallback).
+ */
+
 const Avatar = React.forwardRef<
   React.ElementRef<typeof AvatarPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Root>

@@ -6,6 +6,32 @@ import { X } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * Dialog UI component basado en Radix UI.
+ * Permite mostrar contenido en un modal superpuesto, con soporte para header, footer y cierre.
+ *
+ * ## Ejemplo de uso:
+ *
+ * ```tsx
+ * import { Dialog, DialogTrigger, DialogContent, DialogTitle, DialogDescription } from "./dialog";
+ *
+ * <Dialog>
+ *   <DialogTrigger>Mostrar modal</DialogTrigger>
+ *   <DialogContent>
+ *     <DialogTitle>Título</DialogTitle>
+ *     <DialogDescription>Descripción</DialogDescription>
+ *     <div>Contenido del modal</div>
+ *   </DialogContent>
+ * </Dialog>
+ * ```
+ *
+ * ## Props principales:
+ * - `open`: boolean — Controla la visibilidad del modal.
+ * - `onOpenChange`: (open) => void — Callback al abrir/cerrar.
+ * - `className`: string — Clases personalizadas.
+ * - `children`: ReactNode — Elementos hijos (trigger, content, etc).
+ */
+
 const Dialog = DialogPrimitive.Root
 
 const DialogTrigger = DialogPrimitive.Trigger

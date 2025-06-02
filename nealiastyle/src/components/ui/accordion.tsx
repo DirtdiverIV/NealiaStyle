@@ -6,6 +6,35 @@ import { ChevronDownIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * Accordion UI component basado en Radix UI.
+ * Permite mostrar y ocultar contenido de forma colapsable.
+ *
+ * ## Ejemplo de uso:
+ *
+ * ```tsx
+ * import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "./accordion";
+ *
+ * <Accordion type="single" collapsible>
+ *   <AccordionItem value="item-1">
+ *     <AccordionTrigger>Sección 1</AccordionTrigger>
+ *     <AccordionContent>Contenido de la sección 1</AccordionContent>
+ *   </AccordionItem>
+ *   <AccordionItem value="item-2">
+ *     <AccordionTrigger>Sección 2</AccordionTrigger>
+ *     <AccordionContent>Contenido de la sección 2</AccordionContent>
+ *   </AccordionItem>
+ * </Accordion>
+ * ```
+ *
+ * ## Props principales:
+ * - `type`: "single" | "multiple" — Define si permite abrir uno o varios items a la vez.
+ * - `collapsible`: boolean — Permite colapsar todos los items.
+ * - `value`: string — Valor único para cada item.
+ * - `className`: string — Permite añadir clases personalizadas.
+ * - `children`: ReactNode — Elementos hijos (items, triggers, content).
+ */
+
 function Accordion({
   ...props
 }: React.ComponentProps<typeof AccordionPrimitive.Root>) {
